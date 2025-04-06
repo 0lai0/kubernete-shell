@@ -4,18 +4,18 @@ This shell script sets up a Kubernetes Master node on a physical machine running
 
 #### How to Use
 1. **Download the Script**
-   - Save the script as `minikube.sh`.
+   - Save the script 
 
 2. **Make it Executable**
    - Run this command:
      ```
-     chmod +x minikube.sh
+     chmod +x gcp_k8s_master.sh
      ```
 
 3. **Run the Script**
    - Execute it with `sudo`:
      ```
-     sudo ./minikube.sh
+     sudo ./gcp_k8s_master.sh
      ```
    - Follow the prompts to confirm or enter the Master node IP.
 
@@ -32,6 +32,14 @@ This shell script sets up a Kubernetes Master node on a physical machine running
      ```
      cat k8s-join-command.txt
      ```
+
+#### Output Files
+- `kubeadm_init.log`: Log of the Kubernetes initialization process.
+- `k8s-join-command.txt`: Command to join Worker nodes to the cluster.
+
+#### Customization
+- **Kubernetes Version**: Edit `K8S_VERSION` in the script (e.g., `1.29.2-1.1`).
+- **Pod Network**: Change `POD_CIDR` if needed (default is `10.244.0.0/16`).
 
 #### Troubleshooting
 - If the IP detection fails, manually enter the correct IP when prompted.

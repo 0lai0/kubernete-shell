@@ -4,33 +4,42 @@ This shell script sets up a Kubernetes Master node on a physical machine running
 
 #### How to Use
 1. **Download the Script**
-   - Save the script as `minikube.sh`.
+   - Save the script 
 
 2. **Make it Executable**
    - Run this command:
      ```
-     chmod +x minikube.sh
+     chmod +x kind_setup.sh
      ```
 
 3. **Run the Script**
    - Execute it with `sudo`:
      ```
-     sudo ./minikube.sh
+     sudo ./kind_setup.sh
      ```
    - Follow the prompts to confirm or enter the Master node IP.
 
-4. **Check the Results**
+4. **build kind cluster**
+  - use command:
+    ```
+    sudo kind create cluster --name my-cluster
+    ```
+  - use yaml:
+    ```
+    vim kind-cluster.yaml
+    ```
+    ```
+    sudo kind create cluster --config kind-config.yaml
+    ```
+
+5. **Check the Results**
    - After completion, check the cluster status:
      ```
-     kubectl get nodes
+     kind get clusters
      ```
-   - View the log file if there are issues:
+   - delete cluster:
      ```
-     cat kubeadm_init.log
-     ```
-   - Find the Worker node join command:
-     ```
-     cat k8s-join-command.txt
+     kind delete --name cluster-name
      ```
 
 #### Troubleshooting
