@@ -4,18 +4,18 @@ This shell script sets up a Kubernetes Master node on a physical machine running
 
 #### How to Use
 1. **Download the Script**
-   - Save the script 
+   - Save the script as `minikube.sh`.
 
 2. **Make it Executable**
    - Run this command:
      ```
-     chmod +x <file>.sh
+     chmod +x minikube.sh
      ```
 
 3. **Run the Script**
    - Execute it with `sudo`:
      ```
-     sudo ./<file>.sh
+     sudo ./minikube.sh
      ```
    - Follow the prompts to confirm or enter the Master node IP.
 
