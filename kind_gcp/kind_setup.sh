@@ -42,9 +42,4 @@ rm kind
 
 echo -e "${GREEN}✅ 安裝完成！${NC}"
 echo
-echo -e "${GREEN}👉 請使用下列指令切換至非 root 使用者，然後建立 Kind 叢集：${NC}"
-echo
-echo -e "  ${GREEN}sudo kind create cluster --name my-cluster${NC}"
-echo "或是用yaml建立kind cluster"
-echo
-echo "重新登入後執行也可以。"
+echo -e "${GREEN}👉 請使用readme指令切建立 Kind 叢集${NC}"
