@@ -36,7 +36,7 @@ if [ -z "$MASTER_IP" ]; then
     echo -e "${RED}could not get IP on GCP Metadata , please mannual Master node ip:${NC}"
     read -r MASTER_IP
 else
-    echo "ㄍdetected external IP is $MASTER_IP, sure using this IP?(y/n)"
+    echo "detected internal IP is $MASTER_IP, sure using this IP?(y/n)"
     read -r confirm
     if [ "$confirm" != "y" ]; then
         echo "please enter Master node IP:"
