@@ -128,3 +128,11 @@ echo -e "${GREEN}Master node initialize successful!${NC}"
 echo "please use 'k8s-join-command.txt' copy to every Worker node to excute, and add to cluster"
 echo "example: sudo $JOIN_CMD"
 echo "kubectl configure in /root/.kube/config, you can use 'kubectl get nodes' to check node status。"
+
+# 11. add authorization to use kubectl
+echo "add authorization to use kubectl..."
+mkdir -p ~/.kube
+sudo cp /etc/kubernetes/admin.conf ~/.kube/config
+sudo chown $(whoami):$(whoami) ~/.kube/config
+echo "add authorization to use kubectl successful!"
+echo "you can use 'kubectl get nodes' to check node status."
